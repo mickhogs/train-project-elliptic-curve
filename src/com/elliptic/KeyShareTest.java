@@ -12,7 +12,7 @@ public class KeyShareTest {
 
 	public static void main(String[] args) throws NoSuchAlgorithmException {
 		
-		EllipticCurve btcCurve = EllipticCurve.btcEllipticCurve();
+		final EllipticCurve btcCurve = EllipticCurve.btcEllipticCurve();
 		
 		// Key shares - key is 1000
 		final BigInteger aliceShare = new BigInteger("800");
