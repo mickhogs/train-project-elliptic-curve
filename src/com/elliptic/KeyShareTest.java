@@ -41,7 +41,7 @@ public class KeyShareTest {
 		System.out.println("Random point: " + randomPoint);
 		
 		// r - > cord x of random point mod order. This is the first half of the signature. We generate a term 's' which is verified with public key against the term 'r'
-		final BigInteger r = randomPoint.getxCord().remainder(btcCurve.getOrder());
+		final BigInteger r = randomPoint.getX().remainder(btcCurve.getOrder());
 		
 		// S computed form Bob, Alice and Jack's share of the key
 		final BigInteger aliceHash = hash.add(r.multiply(aliceShare));
@@ -59,7 +59,7 @@ public class KeyShareTest {
 		final Point u2 = btcCurve.pointMultiplication(publicKey, (r.multiply(w).remainder(btcCurve.getOrder())));
 		final Point checkpoint = btcCurve.pointAddition(u1, u2);
 				
-		if(checkpoint.getxCord().compareTo(r) == 0){
+		if(checkpoint.getX().compareTo(r) == 0){
 					
 			System.out.println("signature is valid...");
 					

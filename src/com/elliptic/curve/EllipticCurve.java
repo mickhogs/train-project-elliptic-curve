@@ -44,7 +44,7 @@ public class EllipticCurve {
 	}
 	
 	public Point pointMultiplication(Point p, BigInteger k) {
-		Point tempPoint = new Point(p.getxCord(), p.getyCord());
+		Point tempPoint = new Point(p.getX(), p.getY());
 		final String kAsBinary = k.toString(2);
 		
 		for(int i = 1; i < kAsBinary.length(); i++) {
@@ -60,11 +60,11 @@ public class EllipticCurve {
 	public Point pointAddition(Point P, Point Q) {
 		
 		
-		BigInteger x1 = P.getxCord();
-		BigInteger y1 = P.getyCord();
+		BigInteger x1 = P.getX();
+		BigInteger y1 = P.getY();
 		
-		BigInteger x2 = Q.getxCord();
-		BigInteger y2 = Q.getyCord();
+		BigInteger x2 = Q.getX();
+		BigInteger y2 = Q.getY();
 		
 		BigInteger beta;
 		

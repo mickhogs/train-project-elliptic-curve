@@ -4,28 +4,28 @@ import java.math.BigInteger;
 
 public class Point {
 
-	private final BigInteger xCord;
-	private final BigInteger yCord;
+	private final BigInteger x;
+	private final BigInteger y;
 	
 	public Point(BigInteger xCord, BigInteger yCord) {
-		this.xCord = xCord;
-		this.yCord = yCord;
+		this.x = xCord;
+		this.y = yCord;
 	}
 
-	public BigInteger getxCord() {
-		return xCord;
+	public BigInteger getX() {
+		return x;
 	}
 
-	public BigInteger getyCord() {
-		return yCord;
+	public BigInteger getY() {
+		return y;
 	}
 	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((xCord == null) ? 0 : xCord.hashCode());
-		result = prime * result + ((yCord == null) ? 0 : yCord.hashCode());
+		result = prime * result + ((x == null) ? 0 : x.hashCode());
+		result = prime * result + ((y == null) ? 0 : y.hashCode());
 		return result;
 	}
 
@@ -38,22 +38,22 @@ public class Point {
 		if (getClass() != obj.getClass())
 			return false;
 		Point other = (Point) obj;
-		if (xCord == null) {
-			if (other.xCord != null)
+		if (x == null) {
+			if (other.x != null)
 				return false;
-		} else if (!xCord.equals(other.xCord))
+		} else if (!x.equals(other.x))
 			return false;
-		if (yCord == null) {
-			if (other.yCord != null)
+		if (y == null) {
+			if (other.y != null)
 				return false;
-		} else if (!yCord.equals(other.yCord))
+		} else if (!y.equals(other.y))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Point (" + xCord + "," + yCord + ")";
+		return "Point (" + x + "," + y + ")";
 	}
 	
 	
