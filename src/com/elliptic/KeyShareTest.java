@@ -3,6 +3,7 @@ package com.elliptic;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 
 import com.elliptic.curve.EllipticCurve;
 import com.elliptic.point.Point;
@@ -35,7 +36,7 @@ public class KeyShareTest {
 		System.out.println("Text: " + text + ", hash: " + hash);
 		
 		// a random key is generated for each signature usually - we will just use this for testing
-		final BigInteger randomKey = new BigInteger("184956791234683476421138297853832852980077394385708898754696965181764999991212");
+		final BigInteger randomKey = new BigInteger(256, new SecureRandom());
 		final Point randomPoint = btcCurve.multiplyWithBasePoint(randomKey);
 		System.out.println("Random point: " + randomPoint);
 		
